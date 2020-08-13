@@ -3,10 +3,11 @@ import { useForm } from "react-hook-form";
 
 const ContactForm = () => {
   const [data, setData] = useState();
+  const [numClicks, setNumClicks] = useState(0);
   const { register, errors, handleSubmit, reset } = useForm({
-    mode: "onBlur"
+    mode: "onBlur",
   });
-  const onSubmit = data => {
+  const onSubmit = (data) => {
     setData(data);
   };
 
@@ -17,8 +18,8 @@ const ContactForm = () => {
           <label htmlFor="firstName">First Name*</label>
           <input
             name="firstName"
-            placeholder="bill"
-            ref={register({ required: true, maxLength: 3 })}
+            placeholder="Amanda"
+            ref={register({ required: true, maxLength: 8 })}
           />
           {errors.firstName && (
             <p>Looks like there was an error: {errors.firstName.type}</p>
@@ -29,7 +30,7 @@ const ContactForm = () => {
           <label htmlFor="lastName">Last Name*</label>
           <input
             name="lastName"
-            placeholder="luo"
+            placeholder="Callender"
             ref={register({ required: true })}
           />
           {errors.lastName && (
@@ -38,7 +39,7 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label htmlFor="email" placeholder="bluebill1049@hotmail.com">
+          <label htmlFor="email" placeholder="Chocobo@ffviiremake.com">
             Email*
           </label>
           <input name="email" ref={register({ required: true })} />
@@ -57,6 +58,14 @@ const ContactForm = () => {
         )}
         <input type="submit" />
       </form>
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          setNumClicks(numClicks + 1);
+        }}
+      >
+        click me: {numClicks}
+      </button>
     </div>
   );
 };

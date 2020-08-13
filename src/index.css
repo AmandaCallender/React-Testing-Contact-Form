@@ -25,7 +25,7 @@ h1 {
 }
 
 p {
-  color: #bf1650;
+  color: #10918a;
 }
 
 p::before {
@@ -58,7 +58,7 @@ label {
 
 button[type="submit"],
 input[type="submit"] {
-  background: #ec5990;
+  background: #10918a;
   color: white;
   text-transform: uppercase;
   border: none;
@@ -71,7 +71,7 @@ input[type="submit"] {
 
 button[type="submit"]:hover,
 input[type="submit"]:hover {
-  background: #bf1650;
+  background: #10918a;
 }
 
 button[type="submit"]:active,
@@ -103,7 +103,8 @@ input[type="submit"] {
 }
 
 button[type="button"] {
-  display: block;
+  display: flex;
+  justify-content: center;
   appearance: none;
   background: #333;
   color: white;
@@ -122,7 +123,9 @@ hr {
 }
 
 button {
-  display: block;
+  display: flex;
+  justify-content: center;
+  margin-left: 40%;
   appearance: none;
   margin-top: 40px;
   border: 1px solid #333;
